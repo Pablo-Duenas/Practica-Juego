@@ -45,7 +45,7 @@ public class ProgramaJuego {
 						
 						break;
 					case 4:
-						System.out.println("Llendo al menu principal");
+						System.out.println("Llendo al menu principal...");
 						break;
 					default:
 						System.out.println("Esa no es una opción");
@@ -54,7 +54,7 @@ public class ProgramaJuego {
 				}
 				break;
 			case 5:
-				System.out.println("Hasta la proxima");
+				System.out.println("Hasta la proxima...");
 				break;
 			default:
 				System.out.println("Esa no es una opción");

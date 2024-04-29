@@ -1,13 +1,43 @@
 package Juego;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class Jugador {
 
 	private String nombre;
 	private int puntuacion;
+	private ArrayList<Jugador> listaJugadores ;
 	
 	public Jugador(String nombre, int puntuacion) {
 		this.nombre = nombre;
 		this.puntuacion = puntuacion;
+		this.listaJugadores = new ArrayList();
+	}
+	
+	public boolean ayadirJugador(Jugador jugador) {
+		
+		if (listaJugadores.contains(jugador)) {
+			System.out.println("Ya existe un Jugador con ese nombre.");
+			return false;
+		} else {
+			listaJugadores.add(jugador);
+			return true;
+		}
+	}
+	public boolean eliminarJugador(Jugador jugador) {
+		if(listaJugadores.contains(jugador)) {
+			return this.listaJugadores.remove(jugador);
+		}else {
+			System.out.println("El Jugador no se encuentra");
+			return false;
+		}
+	}
+	public void mostrarJugadores() {
+		System.out.println("Jugadores: " + nombre);
+		for (Jugador jugador : listaJugadores) {
+			System.out.println(jugador);
+		}
 	}
 	
 	public void imprimirJugador() {
@@ -15,7 +45,14 @@ public class Jugador {
 	}
 	
 	
+	
 
+	public ArrayList<Jugador> getListaJugadores() {
+		return listaJugadores;
+	}
+	public void setListaJugadores(ArrayList<Jugador> listaJugadores) {
+		this.listaJugadores = listaJugadores;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -34,4 +71,20 @@ public class Jugador {
 				+ "puntuacion: " + puntuacion;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jugador other = (Jugador) obj;
+		return Objects.equals(nombre, other.nombre);
+	}
 }
