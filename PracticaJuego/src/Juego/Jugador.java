@@ -34,9 +34,8 @@ public class Jugador {
 		}
 	}
 	public void mostrarJugadores() {
-		System.out.println("Jugadores: " + nombre);
 		for (Jugador jugador : listaJugadores) {
-			System.out.println(jugador);
+			System.out.println(jugador.getNombre());
 		}
 	}
 	
