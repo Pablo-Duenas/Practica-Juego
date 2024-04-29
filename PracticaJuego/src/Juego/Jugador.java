@@ -9,10 +9,18 @@ public class Jugador {
 	private int puntuacion;
 	private ArrayList<Jugador> listaJugadores ;
 	
+	
+	
+
+	public Jugador(String nombre) {
+		this.nombre = nombre;
+		this.listaJugadores = new ArrayList<Jugador>();
+	}
+
 	public Jugador(String nombre, int puntuacion) {
 		this.nombre = nombre;
 		this.puntuacion = puntuacion;
-		this.listaJugadores = new ArrayList();
+		this.listaJugadores = new ArrayList<Jugador>();
 	}
 	
 	public boolean ayadirJugador(Jugador jugador) {
@@ -22,11 +30,13 @@ public class Jugador {
 			return false;
 		} else {
 			listaJugadores.add(jugador);
+			System.out.println("El jugador: " +jugador.getNombre()+ " se ha añadido correctamente");
 			return true;
 		}
 	}
 	public boolean eliminarJugador(Jugador jugador) {
 		if(listaJugadores.contains(jugador)) {
+			System.out.println("El jugador: " +jugador.getNombre()+ " se ha eliminado correctamente");
 			return this.listaJugadores.remove(jugador);
 		}else {
 			System.out.println("El Jugador no se encuentra");
