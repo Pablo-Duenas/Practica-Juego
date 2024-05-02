@@ -16,7 +16,8 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-				
+				PreguntaMates pregunta1 = new PreguntaMates("dime un numero", 30);
+				System.out.println(pregunta1.generarExpresionMatematica());
 				break;
 			case 2:
 				
