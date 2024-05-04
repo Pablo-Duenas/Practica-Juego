@@ -16,8 +16,10 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-				PreguntaMates pregunta1 = new PreguntaMates("dime un numero", 30);
-				System.out.println(pregunta1.generarExpresionMatematica());
+				PreguntaLetras pregunta = new PreguntaLetras();
+				System.out.println(pregunta.getPalabraOculta());
+				String palabra = teclado.next();
+				pregunta.palabraCorrecta(palabra);
 				break;
 			case 2:
 				
@@ -36,6 +38,8 @@ public class ProgramaJuego {
 					
 					switch (opcionJugador) {
 					case 1:
+					
+						
 						
 						break;
 					case 2:

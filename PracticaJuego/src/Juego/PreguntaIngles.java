@@ -4,8 +4,7 @@ public class PreguntaIngles extends Preguntas{
 
 	private char respuesta;
 
-	public PreguntaIngles(String pregunta, char respuesta) {
-		super(pregunta);
+	public PreguntaIngles(char respuesta) {
 		this.respuesta = respuesta;
 	}
 	
