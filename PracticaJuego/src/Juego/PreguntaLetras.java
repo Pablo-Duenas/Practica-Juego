@@ -35,7 +35,7 @@ public class PreguntaLetras extends Preguntas {
 	}
 
 	public void ocultarLetras() {
-		StringBuilder palabraOcultaBuilder = new StringBuilder();
+		StringBuilder palabraoculta = new StringBuilder();
 		int cantidadLetras = palabraElegida.length();
 		int cantidadLetrasOcultas;
 		if (cantidadLetras >= 3) {
@@ -45,14 +45,14 @@ public class PreguntaLetras extends Preguntas {
 		}
 		for (int contador = 0; contador < cantidadLetras; contador++) {
 			if (cantidadLetrasOcultas > 0 && (contador + 1) % 3 == 0) {
-				palabraOcultaBuilder.append('*');
+				palabraoculta.append('*');
 				cantidadLetrasOcultas--;
 			} else {
-				palabraOcultaBuilder.append(palabraElegida.charAt(contador));
+				palabraoculta.append(palabraElegida.charAt(contador));
 			}
 		}
 
-		palabraOculta = palabraOcultaBuilder.toString();
+		palabraOculta = palabraoculta.toString();
 	}
 
 	public boolean palabraCorrecta(String palabra) {
