@@ -33,15 +33,6 @@ public class ProgramaJuego {
 					System.out.println("dime la opcion correcta");
 					String letracorrecta = teclado.next();
 					
-					if (pregunta.esOpcionValida(letracorrecta)) {
-					    if (pregunta.comprobarRespuesta(letracorrecta)) {
-					        System.out.println("¡Respuesta correcta!");
-					    } else {
-					        System.out.println("Respuesta incorrecta");
-					    }
-					} else {
-					    System.out.println("Opción inválida. Por favor, elige entre las opciones a, b, c o d.");
-					}
 				}
 				break;
 			case 2:
