@@ -2,8 +2,8 @@ package Juego;
 
 public class Constantes {
 
-	public static final String PREGUNTAS_MATES = "preguntasMatematicas";
-    public static final String PREGUNTAS_LETRAS = "preguntasLetras";
-    public static final String PREGUNTAS_INGLES = "preguntasIngles";
+	public static final int PREGUNTAS_MATES = 1;
+    public static final int PREGUNTAS_LETRAS = 2;
+    public static final int PREGUNTAS_INGLES = 3;
 	
 }

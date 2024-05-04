@@ -1,11 +1,13 @@
 package Juego;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class ProgramaJuego {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
+		Random aleatorio = new Random();
 		int opcion = 0;
 		while(opcion != 5) {
 			System.out.println("1. Jugar Partida.");
@@ -16,10 +18,18 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-				PreguntaLetras pregunta = new PreguntaLetras();
-				System.out.println(pregunta.getPalabraOculta());
-				String palabra = teclado.next();
-				pregunta.palabraCorrecta(palabra);
+				int numeroPregunta = aleatorio.nextInt(3) + 1;
+				if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
+					
+				}else if (numeroPregunta == Constantes.PREGUNTAS_LETRAS) {
+					PreguntaLetras pregunta = new PreguntaLetras();
+					System.out.println(pregunta.getPalabraOculta());
+					String palabra = teclado.next();
+					pregunta.palabraCorrecta(palabra);
+					
+				}else {
+					
+				}
 				break;
 			case 2:
 				
