@@ -8,6 +8,7 @@ public class ProgramaJuego {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		Random aleatorio = new Random();
+		Jugador jugador = new Jugador(null);
 		int opcion = 0;
 		while(opcion != 5) {
 			System.out.println("1. Jugar Partida.");
@@ -28,10 +29,6 @@ public class ProgramaJuego {
 					pregunta.palabraCorrecta(palabra);
 					
 				}else {
-					PreguntaIngles pregunta = new PreguntaIngles();
-					pregunta.hacerPregunta();
-					System.out.println("dime la opcion correcta");
-					String letracorrecta = teclado.next();
 					
 				}
 				break;
@@ -52,21 +49,18 @@ public class ProgramaJuego {
 					
 					switch (opcionJugador) {
 					case 1:
-					
-						
-						
+						System.out.println("Lista de Jugadores");
+						jugador.mostrarJugadores();
 						break;
 					case 2:
 						System.out.println("Dime el nombre del jugador que quieres añadir");
 						String jugadorAyadido = teclado.next();
-						Jugador nuevoJugador = new Jugador(jugadorAyadido);
-						nuevoJugador.ayadirJugador(nuevoJugador);
+						jugador.ayadirJugador(new Jugador(jugadorAyadido));
 						break;
 					case 3:
 						System.out.println("Dime el nombre del jugador que quieres eliminar");
 						String jugadorEliminado = teclado.next();
-						Jugador nuevoJugador2 = new Jugador(jugadorEliminado);
-						nuevoJugador2.eliminarJugador(nuevoJugador2);
+						jugador.eliminarJugador(new Jugador(jugadorEliminado));
 						break;
 					case 4:
 						System.out.println("Llendo al menu principal...");

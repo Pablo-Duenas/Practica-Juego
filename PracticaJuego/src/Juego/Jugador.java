@@ -54,7 +54,6 @@ public class Jugador {
 	}
 	
 	
-	
 
 	public ArrayList<Jugador> getListaJugadores() {
 		return listaJugadores;

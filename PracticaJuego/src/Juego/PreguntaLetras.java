@@ -14,7 +14,8 @@ public class PreguntaLetras extends Preguntas {
 	private String palabraElegida;
 	private String respuesta;
 	private String palabraOculta;
-
+	
+	
 	public PreguntaLetras() {
 		palabraAleatoria();
 		ocultarLetras();
