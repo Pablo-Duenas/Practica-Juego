@@ -25,7 +25,6 @@ public class PreguntaIngles extends Preguntas {
         try {
             Path rutaFicheroIngles = Paths.get(rutaFichero);
             List<String> preguntas = Files.readAllLines(rutaFicheroIngles);
-            Random aleatorio = new Random();
             int lineas = aleatorio.nextInt(preguntas.size() / 5);
             
             pregunta = preguntas.get(lineas * 5);

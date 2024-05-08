@@ -19,28 +19,10 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-				int numeroPregunta = aleatorio.nextInt(3) + 1;
-				if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
-					PreguntaMates preguntaMates = new PreguntaMates();
-					preguntaMates.generarOperacion();
-					int numero = teclado.nextInt();
-					preguntaMates.comprobarResultado(numero);
-					
-				}else if (numeroPregunta == Constantes.PREGUNTAS_LETRAS) {
-					PreguntaLetras preguntaLetras = new PreguntaLetras();
-					System.out.println(preguntaLetras.getPalabraOculta());
-					String palabra = teclado.next();
-					preguntaLetras.palabraCorrecta(palabra);
-					
-				}else {
-					 PreguntaIngles preguntaIngles = new PreguntaIngles();
-				     preguntaIngles.mostrarPregunta();
-				     char letra = teclado.next().toUpperCase().charAt(0);
-				     preguntaIngles.comprobarRespuesta(letra);
-				}
+				Partida.numeroRondas();
 				break;
 			case 2:
-				
+				Partida.numeroJugadores();
 				break;
 			case 3:
 				
@@ -87,5 +69,8 @@ public class ProgramaJuego {
 			}
 		}
 	}
+	
+	
+	
 
 }
