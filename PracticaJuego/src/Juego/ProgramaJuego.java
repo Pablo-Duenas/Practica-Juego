@@ -29,7 +29,10 @@ public class ProgramaJuego {
 					pregunta.palabraCorrecta(palabra);
 					
 				}else {
-					
+					 PreguntaIngles preguntaIngles = new PreguntaIngles();
+				     preguntaIngles.mostrarPregunta();
+				     char letra = teclado.next().toUpperCase().charAt(0);
+				     preguntaIngles.verificarRespuesta(letra);
 				}
 				break;
 			case 2:
