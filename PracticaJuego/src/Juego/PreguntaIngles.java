@@ -37,19 +37,19 @@ public class PreguntaIngles extends Preguntas {
             Collections.shuffle(opciones);
             
             System.out.println(pregunta);
-            char letraOpcion = 'A';
+            char letra = 'A';
             for (String opcion : opciones) {
             	if (respuestaCorrecta == opcion) {
-					respuestaCorrecta = letraOpcion + respuestaCorrecta;
+					respuestaCorrecta = letra + respuestaCorrecta;
 				}
-                System.out.println(letraOpcion + ") " + opcion);
-                letraOpcion++;
+                System.out.println(letra + ") " + opcion);
+                letra++;
 				}
         } catch (IOException excepcion) {
-            System.out.println("Error al cargar el diccionario: " + excepcion.getMessage());
+            System.out.println("Error al cargar el fichero ingles.txt: " + excepcion.getMessage());
         }
     }
-    public boolean verificarRespuesta(char opcionSeleccionada) {
+    public boolean comprobarRespuesta(char opcionSeleccionada) {
         opcionSeleccionada = Character.toUpperCase(opcionSeleccionada);
         char letraCorrecta = Character.toUpperCase(respuestaCorrecta.charAt(0));
         if (opcionSeleccionada == letraCorrecta) {

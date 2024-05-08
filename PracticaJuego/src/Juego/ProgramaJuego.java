@@ -21,18 +21,22 @@ public class ProgramaJuego {
 			case 1:
 				int numeroPregunta = aleatorio.nextInt(3) + 1;
 				if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
+					PreguntaMates preguntaMates = new PreguntaMates();
+					preguntaMates.generarOperacion();
+					int numero = teclado.nextInt();
+					preguntaMates.comprobarResultado(numero);
 					
 				}else if (numeroPregunta == Constantes.PREGUNTAS_LETRAS) {
-					PreguntaLetras pregunta = new PreguntaLetras();
-					System.out.println(pregunta.getPalabraOculta());
+					PreguntaLetras preguntaLetras = new PreguntaLetras();
+					System.out.println(preguntaLetras.getPalabraOculta());
 					String palabra = teclado.next();
-					pregunta.palabraCorrecta(palabra);
+					preguntaLetras.palabraCorrecta(palabra);
 					
 				}else {
 					 PreguntaIngles preguntaIngles = new PreguntaIngles();
 				     preguntaIngles.mostrarPregunta();
 				     char letra = teclado.next().toUpperCase().charAt(0);
-				     preguntaIngles.verificarRespuesta(letra);
+				     preguntaIngles.comprobarRespuesta(letra);
 				}
 				break;
 			case 2:

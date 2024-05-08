@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -12,7 +11,6 @@ public class PreguntaLetras extends Preguntas {
 	Random aleatorio = new Random();
 	private static String rutaFichero = "./Ficheros/diccionario.txt";
 	private String palabraElegida;
-	private String respuesta;
 	private String palabraOculta;
 	
 	
@@ -31,23 +29,23 @@ public class PreguntaLetras extends Preguntas {
 				System.out.println("El diccionario está vacío.");
 			}
 		} catch (IOException excepcion) {
-			System.out.println("Error al cargar el diccionario: " + excepcion.getMessage());
+			System.out.println("Error al cargar el fichero diccionario.txt: " + excepcion.getMessage());
 		}
 	}
 
 	public void ocultarLetras() {
 		StringBuilder palabraoculta = new StringBuilder();
-		int cantidadLetras = palabraElegida.length();
-		int cantidadLetrasOcultas;
-		if (cantidadLetras >= 3) {
-			cantidadLetrasOcultas = cantidadLetras / 3;
+		int numeroLetras = palabraElegida.length();
+		int numeroLetrasOcultas;
+		if (numeroLetras >= 3) {
+			numeroLetrasOcultas = numeroLetras / 3;
 		} else {
-			cantidadLetrasOcultas = 0;
+			numeroLetrasOcultas = 0;
 		}
-		for (int contador = 0; contador < cantidadLetras; contador++) {
-			if (cantidadLetrasOcultas > 0 && (contador + 1) % 3 == 0) {
+		for (int contador = 0; contador < numeroLetras; contador++) {
+			if (numeroLetrasOcultas > 0 && (contador + 1) % 3 == 0) {
 				palabraoculta.append('*');
-				cantidadLetrasOcultas--;
+				numeroLetrasOcultas--;
 			} else {
 				palabraoculta.append(palabraElegida.charAt(contador));
 			}
