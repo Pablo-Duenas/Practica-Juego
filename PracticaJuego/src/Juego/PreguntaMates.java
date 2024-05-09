@@ -1,6 +1,6 @@
 package Juego;
 
-import java.util.Random;
+import java.util.Random; 
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class PreguntaMates extends Preguntas {
@@ -10,9 +10,7 @@ public class PreguntaMates extends Preguntas {
 	private int resultado;
 	private int cantidadNumeros;
 
-	public PreguntaMates() {
 
-	}
 
 	public void generarOperacion() {
 		cantidadNumeros = aleatorio.nextInt(5) + 4;

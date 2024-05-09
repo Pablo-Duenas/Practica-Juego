@@ -1,6 +1,6 @@
 package Juego;
 
-import java.util.Random;
+import java.util.Random; 
 import java.util.Scanner;
 
 public class ProgramaJuego {
@@ -19,13 +19,13 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-				Partida.numeroRondas();
+
 				break;
 			case 2:
-				Partida.numeroJugadores();
+				Ranking.crearFicheroRanking();
 				break;
 			case 3:
-				
+
 				break;
 			case 4:
 				int opcionJugador = 0;

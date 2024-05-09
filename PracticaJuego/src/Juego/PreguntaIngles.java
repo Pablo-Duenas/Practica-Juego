@@ -17,9 +17,11 @@ public class PreguntaIngles extends Preguntas {
 
 
     public PreguntaIngles() {
-        this.pregunta = "";
-        this.respuestaCorrecta = "";
-    }
+		this.pregunta = "";
+		this.respuestaCorrecta = "";
+	}
+
+
 
     public void mostrarPregunta() {
         try {

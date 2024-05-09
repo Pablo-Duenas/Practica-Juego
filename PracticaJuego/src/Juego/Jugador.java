@@ -1,6 +1,6 @@
 package Juego;
 
-import java.util.ArrayList;
+import java.util.ArrayList;  
 import java.util.Objects;
 
 public class Jugador {
@@ -14,6 +14,7 @@ public class Jugador {
 
 	public Jugador(String nombre) {
 		this.nombre = nombre;
+		this.puntuacion = 0;
 		this.listaJugadores = new ArrayList<Jugador>();
 	}
 
@@ -43,6 +44,17 @@ public class Jugador {
 			return false;
 		}
 	}
+	
+	public void comprobarJugador(Jugador jugador) {
+		if (jugador.getListaJugadores().equals(jugador)) {
+			System.out.println("Este jugador ya esta registrado");
+		}else {
+			System.out.println("Este jugador no esta registrado");
+		}
+	}
+	
+	
+	
 	public void mostrarJugadores() {
 		for (Jugador jugador : listaJugadores) {
 			System.out.println(jugador.getNombre());
@@ -70,8 +82,8 @@ public class Jugador {
 	public int getPuntuacion() {
 		return puntuacion;
 	}
-	public void setPuntuacion(int puntuacion) {
-		this.puntuacion = puntuacion;
+	public void incrementarPuntuacion() {
+		puntuacion++;
 	}
 	@Override
 	public String toString() {
