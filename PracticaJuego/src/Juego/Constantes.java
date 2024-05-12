@@ -10,4 +10,6 @@ public class Constantes {
     public static final int Partida_Corta = 5;
     public static final int Partida_Normal = 10;
     public static final int Partida_Larga = 20;
+    
+    public static final int Jugadores_Maximos = 4;
 }

@@ -1,5 +1,6 @@
 package Juego;
 
+import java.util.ArrayList;
 import java.util.Random; 
 import java.util.Scanner;
 
@@ -8,7 +9,8 @@ public class ProgramaJuego {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		Random aleatorio = new Random();
-		Jugador jugador = new Jugador(null);
+		JugadorHumano jugador = new JugadorHumano(null);
+		ArrayList<JugadorHumano> listahumanos = new ArrayList<JugadorHumano>(); 
 		int opcion = 0;
 		while(opcion != 5) {
 			System.out.println("1. Jugar Partida.");
@@ -19,7 +21,12 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-
+				
+				Partida.numeroJugadores();
+				System.out.println("Empieza la partida");
+				Partida.tipoPartida();
+				
+				
 				break;
 			case 2:
 				Ranking.crearFicheroRanking();
@@ -44,12 +51,12 @@ public class ProgramaJuego {
 					case 2:
 						System.out.println("Dime el nombre del jugador que quieres añadir");
 						String jugadorAyadido = teclado.next();
-						jugador.ayadirJugador(new Jugador(jugadorAyadido));
+						jugador.ayadirJugador(new JugadorHumano(jugadorAyadido));
 						break;
 					case 3:
 						System.out.println("Dime el nombre del jugador que quieres eliminar");
 						String jugadorEliminado = teclado.next();
-						jugador.eliminarJugador(new Jugador(jugadorEliminado));
+						jugador.eliminarJugador(new JugadorHumano(jugadorEliminado));
 						break;
 					case 4:
 						System.out.println("Llendo al menu principal...");
