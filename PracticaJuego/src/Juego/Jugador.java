@@ -10,7 +10,7 @@ public class Jugador {
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 	}
-	public static void sumarPuntos() {
+	public void sumarPuntos() {
 		puntuacion++;
     }
 

@@ -32,7 +32,8 @@ public class ProgramaJuego {
 				Ranking.crearFicheroRanking();
 				break;
 			case 3:
-
+				Historico.crearFicheroHistorico();
+				Historico.guardarpartida();
 				break;
 			case 4:
 				int opcionJugador = 0;

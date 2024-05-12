@@ -49,4 +49,11 @@ public class PreguntaMates extends Preguntas {
 
 	}
 
+	public int getResultado() {
+		return resultado;
+	}
+
+
+	
+
 }

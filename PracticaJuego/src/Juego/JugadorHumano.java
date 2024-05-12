@@ -9,6 +9,13 @@ public class JugadorHumano extends Jugador {
 	public JugadorHumano(String nombre) {
 		super(nombre);
 	}
+	
+	public static ArrayList<JugadorHumano> lista(){
+		return listaJugadores;
+		
+	}
+	
+	
 
 	public  boolean ayadirJugador(JugadorHumano jugador) {
 		if (listaJugadores.contains(jugador)) {
