@@ -1,6 +1,6 @@
 package Juego;
 
-import java.util.Random; 
+import java.util.Random;  
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class PreguntaMates extends Preguntas {
@@ -53,7 +53,11 @@ public class PreguntaMates extends Preguntas {
 		return resultado;
 	}
 
-
+	public int solucionMatesMaquina(PreguntaMates pregunta) {
+		int solucion = pregunta.getResultado();
+		return solucion;
+		
+	}
 	
 
 }

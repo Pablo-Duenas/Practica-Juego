@@ -61,5 +61,22 @@ public class PreguntaIngles extends Preguntas {
             return false;
         }
     }
+	public char solucionInglesMaquina(){
+		Random aleatorio = new Random();
+		char solucion= ' ';
+		int letraSolucion = aleatorio.nextInt(4) + 1;
+		if (letraSolucion == 1) {
+			solucion = 'A';
+		}else if (letraSolucion == 2) {
+			solucion = 'B';
+		}else if (letraSolucion == 3) {
+			solucion = 'C';
+		}else {
+			solucion = 'D';
+		}
+		
+		return solucion;
+		
+	}
 	}
 

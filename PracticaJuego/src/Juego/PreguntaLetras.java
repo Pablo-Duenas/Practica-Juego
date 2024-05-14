@@ -73,5 +73,10 @@ public class PreguntaLetras extends Preguntas {
 	public String getPalabraOculta() {
 		return palabraOculta;
 	}
-
+	public String solucionLetrasMaquina() {
+		String solucion = "";
+		return solucion;
+		
+	}
+	
 }

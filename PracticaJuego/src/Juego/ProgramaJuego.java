@@ -9,8 +9,8 @@ public class ProgramaJuego {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		Random aleatorio = new Random();
-		JugadorHumano jugador = new JugadorHumano(null);
-		ArrayList<JugadorHumano> listahumanos = new ArrayList<JugadorHumano>(); 
+		Jugador jugador = new Jugador(null);
+		ArrayList<Jugador> listahumanos = new ArrayList<Jugador>(); 
 		int opcion = 0;
 		while(opcion != 5) {
 			System.out.println("1. Jugar Partida.");
@@ -32,8 +32,7 @@ public class ProgramaJuego {
 				Ranking.crearFicheroRanking();
 				break;
 			case 3:
-				Historico.crearFicheroHistorico();
-				Historico.guardarpartida();
+				Historico.mostrarFichero();
 				break;
 			case 4:
 				int opcionJugador = 0;
@@ -52,12 +51,12 @@ public class ProgramaJuego {
 					case 2:
 						System.out.println("Dime el nombre del jugador que quieres añadir");
 						String jugadorAyadido = teclado.next();
-						jugador.ayadirJugador(new JugadorHumano(jugadorAyadido));
+						jugador.ayadirJugadorHumano(new Jugador(jugadorAyadido));
 						break;
 					case 3:
 						System.out.println("Dime el nombre del jugador que quieres eliminar");
 						String jugadorEliminado = teclado.next();
-						jugador.eliminarJugador(new JugadorHumano(jugadorEliminado));
+						jugador.eliminarJugador(new Jugador(jugadorEliminado));
 						break;
 					case 4:
 						System.out.println("Llendo al menu principal...");

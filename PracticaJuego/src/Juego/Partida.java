@@ -36,9 +36,33 @@ public class Partida {
 		}
 	}
 
-	static void numeroJugadores() {
-		JugadorHumano jugador = new JugadorHumano(null);
+	public static void hacerPreguntaMaquina(Jugador maquina) {
+		int numeroPregunta = aleatorio.nextInt(3) + 1;
+		if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
+			PreguntaMates preguntaMates = new PreguntaMates();
+			preguntaMates.generarOperacion();
+			System.out.println(preguntaMates.solucionMatesMaquina(preguntaMates));
+			System.out.println("La respuesta es correcta");
+			maquina.sumarPuntos();
 
+		} else if (numeroPregunta == Constantes.PREGUNTAS_LETRAS) {
+			PreguntaLetras preguntaLetras = new PreguntaLetras();
+			System.out.println(preguntaLetras.getPalabraOculta());
+			preguntaLetras.palabraCorrecta(preguntaLetras.solucionLetrasMaquina());
+		} else {
+			PreguntaIngles preguntaIngles = new PreguntaIngles();
+			preguntaIngles.mostrarPregunta();
+			preguntaIngles.solucionInglesMaquina();
+
+			if (preguntaIngles.comprobarRespuesta(preguntaIngles.solucionInglesMaquina())) {
+
+				maquina.sumarPuntos();
+			}
+		}
+	}
+
+	static void numeroJugadores() {
+		Jugador jugador = new Jugador(null);
 		System.out.println("¿Numero de jugadores humanos? (1-4)");
 		int jugadorHumano = teclado.nextInt();
 		System.out.println("¿Numero de jugadores CPU? (1-4)");
@@ -48,15 +72,15 @@ public class Partida {
 			for (int contador = 0; contador < jugadorHumano; contador++) {
 				System.out.println("Jugador humano " + (contador + 1) + ":");
 				String nombre = teclado.next();
-				JugadorHumano.comprobarJugador(nombre);
+				Jugador.comprobarJugador(nombre);
 				;
 			}
 
 			for (int contador = 0; contador < jugadorMaquina; contador++) {
 				String maquina = "cpu" + contador;
 				System.out.println(maquina);
-				jugador.ayadirJugador(new JugadorHumano(maquina));
-				JugadorHumano.comprobarJugador(maquina);
+				jugador.ayadirJugador(new Jugador(maquina));
+				Jugador.comprobarJugador(maquina);
 			}
 		} else {
 			System.out.println("Número de jugadores inválidos");
@@ -94,55 +118,92 @@ public class Partida {
 	}
 
 	public static void partidaRapida() {
-		jugadores.addAll(JugadorHumano.getListaJugadores());
+		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
 		for (int contador = 0; contador < Constantes.Partida_Rapida; contador++) {
 			System.out.println("Ronda: " + (contador + 1));
 
 			for (Jugador jugador : jugadores) {
-				System.out.println("Turno de: " + jugador);
-				hacerPregunta(jugador);
+				if (jugador.getNombre().endsWith("0") || jugador.getNombre().endsWith("1")
+						|| jugador.getNombre().endsWith("2") || jugador.getNombre().endsWith("3")) {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPreguntaMaquina(jugador);
+
+				} else {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPregunta(jugador);
+				}
 			}
 		}
+		Historico.crearFicheroHistorico();
+		Historico.guardarpartida();
+
 	}
 
 	public static void partidaCorta() {
-		jugadores.addAll(JugadorHumano.getListaJugadores());
+		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
 		for (int contador = 0; contador < Constantes.Partida_Corta; contador++) {
 			System.out.println("Ronda: " + (contador + 1));
 
 			for (Jugador jugador : jugadores) {
-				System.out.println("Turno de: " + jugador);
-				hacerPregunta(jugador);
+				if (jugador.getNombre().endsWith("0") || jugador.getNombre().endsWith("1")
+						|| jugador.getNombre().endsWith("2") || jugador.getNombre().endsWith("3")) {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPreguntaMaquina(jugador);
+
+				} else {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPregunta(jugador);
+				}
 			}
 		}
+		Historico.crearFicheroHistorico();
+		Historico.guardarpartida();
 	}
 
 	public static void partidaNormal() {
-		jugadores.addAll(JugadorHumano.getListaJugadores());
+		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
 		for (int contador = 0; contador < Constantes.Partida_Normal; contador++) {
 			System.out.println("Ronda: " + (contador + 1));
 
 			for (Jugador jugador : jugadores) {
-				System.out.println("Turno de: " + jugador);
-				hacerPregunta(jugador);
+				if (jugador.getNombre().endsWith("0") || jugador.getNombre().endsWith("1")
+						|| jugador.getNombre().endsWith("2") || jugador.getNombre().endsWith("3")) {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPreguntaMaquina(jugador);
+
+				} else {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPregunta(jugador);
+				}
 			}
 		}
+		Historico.crearFicheroHistorico();
+		Historico.guardarpartida();
 	}
 
 	public static void partidaLarga() {
-		jugadores.addAll(JugadorHumano.getListaJugadores());
+		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
 		for (int contador = 0; contador < Constantes.Partida_Larga; contador++) {
 			System.out.println("Ronda: " + (contador + 1));
 
 			for (Jugador jugador : jugadores) {
-				System.out.println("Turno de: " + jugador);
-				hacerPregunta(jugador);
+				if (jugador.getNombre().endsWith("0") || jugador.getNombre().endsWith("1")
+						|| jugador.getNombre().endsWith("2") || jugador.getNombre().endsWith("3")) {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPreguntaMaquina(jugador);
+
+				} else {
+					System.out.println("Turno del Jugador:" + jugador);
+					hacerPregunta(jugador);
+				}
 			}
 		}
+		Historico.crearFicheroHistorico();
+		Historico.guardarpartida();
 	}
 
 }
