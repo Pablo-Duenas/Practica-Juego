@@ -1,6 +1,6 @@
 package Juego;
 
-import java.io.IOException; 
+import java.io.IOException;  
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -8,21 +8,31 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * La clase PreguntaIngles representa las preguntas de inglés.
+ *
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class PreguntaIngles extends Preguntas {
 	Random aleatorio = new Random();
 	private String pregunta;
     private String respuestaCorrecta;
     private static String rutaFichero = "./Ficheros/ingles.txt";
 
-
+    /**
+     * Crea una nueva instancia de PreguntaIngles.
+     */
     public PreguntaIngles() {
 		this.pregunta = "";
 		this.respuestaCorrecta = "";
 	}
 
 
-
+    /**
+     * Muestra una pregunta aleatoria en inglés del archivo de preguntas.
+     */
     public void mostrarPregunta() {
         try {
             Path rutaFicheroIngles = Paths.get(rutaFichero);
@@ -50,6 +60,12 @@ public class PreguntaIngles extends Preguntas {
             System.out.println("Error al cargar el fichero ingles.txt: " + excepcion.getMessage());
         }
     }
+    /**
+     * Comprueba si la opción del jugador es la respuesta correcta.
+     *
+     * @param opcionSeleccionada La opción seleccionada por el jugador.
+     * @return true si la opción seleccionada es correcta, false si la opcion seleccionada es incorrecta.
+     */
     public boolean comprobarRespuesta(char opcionSeleccionada) {
         opcionSeleccionada = Character.toUpperCase(opcionSeleccionada);
         char letraCorrecta = Character.toUpperCase(respuestaCorrecta.charAt(0));
@@ -61,6 +77,11 @@ public class PreguntaIngles extends Preguntas {
             return false;
         }
     }
+    /**
+     * Genera una solución aleatoria para la máquina.
+     *
+     * @return La letra correspondiente a la solución para la máquina.
+     */
 	public char solucionInglesMaquina(){
 		Random aleatorio = new Random();
 		char solucion= ' ';

@@ -1,6 +1,6 @@
 package Juego;
 
-import java.io.BufferedWriter;
+import java.io.BufferedWriter; 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileSystemException;
@@ -10,11 +10,20 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * La clase Historico se encarga de gestionar el historial de partidas del juego.
+ * Permite crear un archivo para almacenar el historial.
+ * 
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class Historico {
-
+	/** Ruta del archivo de Historico */
 	private static String rutaFichero = "./Ficheros/Historico.txt";
-
+	/**
+     * Crea el archivo de historial si no existe.
+     */
 	static void crearFicheroHistorico() {
 
 		Path rutaFicheroHistorico = Paths.get(rutaFichero);
@@ -31,8 +40,10 @@ public class Historico {
 		}
 
 	}
-
-	public static void guardarpartida() {
+	 /**
+     * Registra los detalles de la partida actual en el archivo de historial.
+     */
+	public static void registrarPartida() {
 
 		try (BufferedWriter escribirFichero = new BufferedWriter(new FileWriter(rutaFichero, true))) {
 
@@ -47,7 +58,9 @@ public class Historico {
 			throw new RuntimeException("Error al registrar la partida el archivo : " + excepcion);
 		}
 	}
-
+	  /**
+     * Muestra el contenido del archivo del historial.
+     */
 	public static void mostrarFichero() {
 		try {
 			List<String> lineas = Files.readAllLines(Paths.get(rutaFichero));

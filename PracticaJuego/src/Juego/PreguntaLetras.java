@@ -6,19 +6,30 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * La clase PreguntaLetras representa las preguntas de letras.
+ *
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class PreguntaLetras extends Preguntas {
 	Random aleatorio = new Random();
 	private static String rutaFichero = "./Ficheros/diccionario.txt";
 	private String palabraElegida;
 	private String palabraOculta;
 	
-	
+    /**
+     * Crea una nueva instancia de PreguntaLetras, seleccionando una palabra aleatoria del diccionario
+     * y ocultando algunas letras.
+     */
 	public PreguntaLetras() {
 		palabraAleatoria();
 		ocultarLetras();
 	}
-
+    /**
+     * Coge una palabra aleatoria del diccionario.
+     */
 	public void palabraAleatoria() {
 		try {
 			Path rutaFicheroDiccionario = Paths.get(rutaFichero);
@@ -32,7 +43,9 @@ public class PreguntaLetras extends Preguntas {
 			System.out.println("Error al cargar el fichero diccionario.txt: " + excepcion.getMessage());
 		}
 	}
-
+	   /**
+     * Oculta algunas letras de la palabra elegida.
+     */
 	public void ocultarLetras() {
 		StringBuilder palabraoculta = new StringBuilder();
 		int numeroLetras = palabraElegida.length();
@@ -53,7 +66,12 @@ public class PreguntaLetras extends Preguntas {
 
 		palabraOculta = palabraoculta.toString();
 	}
-
+	/**
+     * Comprueba si la palabra ingresada por el jugador es correcta.
+     *
+     * @param palabra La palabra ingresada por el jugador.
+     * @return true si la palabra es correcta, false si la palabra es incorrecta.
+     */
 	public boolean palabraCorrecta(String palabra) {
 
 		if (palabra.equalsIgnoreCase(palabraElegida)) {
@@ -73,6 +91,11 @@ public class PreguntaLetras extends Preguntas {
 	public String getPalabraOculta() {
 		return palabraOculta;
 	}
+    /**
+     * Genera una solución para la máquina.
+     *
+     * @return La solución generada para la máquina.
+     */
 	public String solucionLetrasMaquina() {
 		String solucion = "";
 		return solucion;

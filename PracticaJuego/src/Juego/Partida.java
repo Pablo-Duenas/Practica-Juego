@@ -1,15 +1,25 @@
 package Juego;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * La clase Partida gestiona las partidas del juego.
+ * 
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class Partida {
 	static Random aleatorio = new Random();
 	static Scanner teclado = new Scanner(System.in);
 	static ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-
+	/**
+     * Hace una pregunta al jugador Humano.
+     * 
+     * @param jugador El jugador al que se le hace la pregunta de mates, letras e ingles.
+     */
 	static void hacerPregunta(Jugador jugador) {
 		int numeroPregunta = aleatorio.nextInt(3) + 1;
 		if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
@@ -35,7 +45,11 @@ public class Partida {
 			}
 		}
 	}
-
+	/**
+     * Hace una pregunta a un jugador máquina.
+     * 
+     * @param maquina El jugador máquina al que se le hace la pregunta de mates, letras e ingles.
+     */
 	public static void hacerPreguntaMaquina(Jugador maquina) {
 		int numeroPregunta = aleatorio.nextInt(3) + 1;
 		if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
@@ -60,7 +74,9 @@ public class Partida {
 			}
 		}
 	}
-
+	/**
+     * Pide al usuario que le diga el número de jugadores humanos y maquinas que quiere, 
+     */
 	static void numeroJugadores() {
 		Jugador jugador = new Jugador(null);
 		System.out.println("¿Numero de jugadores humanos? (1-4)");
@@ -86,7 +102,9 @@ public class Partida {
 			System.out.println("Número de jugadores inválidos");
 		}
 	}
-
+    /**
+     * Le dice al usuario que elija el tipo de partida que quiere jugar.
+     */
 	public static void tipoPartida() {
 
 		System.out.println("Elije el tipo de partida que quieres jugar: ");
@@ -116,7 +134,9 @@ public class Partida {
 		}
 
 	}
-
+    /**
+     * Realiza una partida rápida.
+     */
 	public static void partidaRapida() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -136,10 +156,12 @@ public class Partida {
 			}
 		}
 		Historico.crearFicheroHistorico();
-		Historico.guardarpartida();
+		Historico.registrarPartida();
 
 	}
-
+    /**
+     * Realiza una partida corta.
+     */
 	public static void partidaCorta() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -159,9 +181,11 @@ public class Partida {
 			}
 		}
 		Historico.crearFicheroHistorico();
-		Historico.guardarpartida();
+		Historico.registrarPartida();
 	}
-
+    /**
+     * Realiza una partida normal.
+     */
 	public static void partidaNormal() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -181,9 +205,11 @@ public class Partida {
 			}
 		}
 		Historico.crearFicheroHistorico();
-		Historico.guardarpartida();
+		Historico.registrarPartida();
 	}
-
+    /**
+     * Realiza una partida larga.
+     */
 	public static void partidaLarga() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -203,7 +229,7 @@ public class Partida {
 			}
 		}
 		Historico.crearFicheroHistorico();
-		Historico.guardarpartida();
+		Historico.registrarPartida();
 	}
 
 }

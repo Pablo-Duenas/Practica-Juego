@@ -1,19 +1,34 @@
 package Juego;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Objects;
-
+/**
+ * La clase Jugador representa a un jugador en el juego.
+ * 
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class Jugador {
 
 	private String nombre;
 	private int puntuacion;
 	private static ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
-
+	 /**
+     * Crea un nuevo jugador con un nombre y una puntuacion.
+     * 
+     * @param nombre El nombre del jugador.
+     */
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 		puntuacion = 0;
 	}
-
+	/**
+     * Añade un jugador a la lista de jugadores.
+     * 
+     * @param jugador El jugador que quieres añadir.
+     * @return true si se añade correctamente, false si ya existe un jugador con el mismo nombre.
+     */
 	public boolean ayadirJugadorHumano(Jugador jugador) {
 		if (jugador.comprobarNombre() == true) {
 			if (listaJugadores.contains(jugador)) {
@@ -28,7 +43,12 @@ public class Jugador {
 			return false;
 		}
 	}
-
+	/**
+     * Añade el jugador maquina a la lista de jugadores.
+     * 
+     * @param jugador El jugador que quieres añadir.
+     * @return true si se añade correctamente, false si ya existe un jugador con el mismo nombre.
+     */
 	public boolean ayadirJugador(Jugador jugador) {
 		if (listaJugadores.contains(jugador)) {
 			System.out.println("Ya existe un Jugador con ese nombre.");
@@ -39,7 +59,12 @@ public class Jugador {
 			return true;
 		}
 	}
-
+	/**
+     * Elimina un jugador de la lista de jugadores.
+     * 
+     * @param jugador El jugador que quieres eliminar.
+     * @return true si se elimina correctamente, false si el jugador no se encuentra.
+     */
 	public boolean eliminarJugador(Jugador jugador) {
 		if (listaJugadores.contains(jugador)) {
 			System.out.println("El jugador: " + jugador.getNombre() + " se ha eliminado correctamente");
@@ -49,7 +74,11 @@ public class Jugador {
 			return false;
 		}
 	}
-
+	 /**
+     * Comprueba si existe un jugador con el nombre que le digan.
+     * 
+     * @param nombre El nombre del jugador que quieres buscar.
+     */
 	public static void comprobarJugador(String nombre) {
 		boolean encontrado = false;
 		for (Jugador jugador : listaJugadores) {
@@ -63,7 +92,11 @@ public class Jugador {
 		}
 
 	}
-
+	/**
+     * Comprueba si el nombre del jugador solo contiene letras.
+     * 
+     * @return true si el nombre es válido, false si contiene números.
+     */
 	public boolean comprobarNombre() {
 		int contador = 0;
 		while (contador < this.nombre.length()) {
@@ -79,25 +112,37 @@ public class Jugador {
 		return true;
 
 	}
-
+	 /**
+     * Devuelve la lista de jugadores.
+     * 
+     * @return La lista de jugadores.
+     */
 	public static ArrayList<Jugador> listaJugadoresPartida() {
 		return listaJugadores;
 	}
-
+    /**
+     * Incrementa la puntuación.
+     */
 	public void sumarPuntos() {
 		puntuacion++;
 	}
-
+	/**
+     * Muestra la puntuación del jugador.
+     */
 	public void mostrarPuntuacion() {
 		System.out.println(nombre + ": " + "puntos: " + puntuacion);
 	}
-
+	   /**
+     * Muestra los nombres de todos los jugadores.
+     */
 	public void mostrarJugadores() {
 		for (Jugador jugador : listaJugadores) {
 			System.out.println(jugador.getNombre());
 		}
 	}
-
+    /**
+     * Imprime la información del jugador.
+     */
 	public void imprimirJugador() {
 		System.out.println(toString());
 	}

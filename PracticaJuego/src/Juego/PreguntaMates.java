@@ -2,7 +2,13 @@ package Juego;
 
 import java.util.Random;  
 import net.objecthunter.exp4j.ExpressionBuilder;
-
+/**
+ * La clase PreguntaMates representa las preguntas matemáticas.
+ *
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class PreguntaMates extends Preguntas {
 	Random aleatorio = new Random();
 	StringBuilder operacion = new StringBuilder();
@@ -11,7 +17,9 @@ public class PreguntaMates extends Preguntas {
 	private int cantidadNumeros;
 
 
-
+	  /**
+     * Genera una operación matemática aleatoria.
+     */
 	public void generarOperacion() {
 		cantidadNumeros = aleatorio.nextInt(5) + 4;
 		for (int contador = 0; contador < cantidadNumeros; contador++) {
@@ -37,7 +45,12 @@ public class PreguntaMates extends Preguntas {
 			System.out.println("Error al evaluar la expresión: " + excepcion.getMessage());
 		}
 	}
-
+	/**
+     * Comprueba si el resultado ingresado por el jugador es correcto.
+     *
+     * @param resultadoUsuario El resultado ingresado por el jugador.
+     * @return true si el resultado es correcto, false si el resultado es incorrecto.
+     */
 	public boolean comprobarResultado(int resultadoUsuario) {
 		if (resultado == resultadoUsuario) {
 			System.out.println("El resultado es correcto");
@@ -52,7 +65,12 @@ public class PreguntaMates extends Preguntas {
 	public int getResultado() {
 		return resultado;
 	}
-
+    /**
+     * Genera la solución para la máquina.
+     *
+     * @param pregunta La pregunta matemática.
+     * @return La solución generada para la máquina.
+     */
 	public int solucionMatesMaquina(PreguntaMates pregunta) {
 		int solucion = pregunta.getResultado();
 		return solucion;

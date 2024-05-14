@@ -3,7 +3,14 @@ package Juego;
 import java.util.ArrayList;
 import java.util.Random; 
 import java.util.Scanner;
-
+/**
+ * La clase ProgramaJuego permite al usuario seleccionar diferentes opciones como jugar una partida, ver el ranking de jugadores,
+ * ver el histórico de partidas y administrar la lista de jugadores.
+ *
+ * @version 1.0
+ * @since 0.1
+ * @autor Pablo
+ */
 public class ProgramaJuego {
 
 	public static void main(String[] args) {
