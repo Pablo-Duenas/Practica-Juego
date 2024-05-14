@@ -5,3 +5,10 @@ cpu3 puntos: 2 | cpu0 puntos: 1 | cpu2 puntos: 2 | cpu1 puntos: 0 |
 cpu0 puntos: 1 | cpu1 puntos: 1 | pablo puntos: 0 | lourdes puntos: 2 | 
 cpu2 puntos: 8 | cpu1 puntos: 10 | cpu3 puntos: 10 | cpu0 puntos: 8 | 
 cpu1 puntos: 8 | cpu2 puntos: 6 | cpu0 puntos: 9 | cpu3 puntos: 8 | 
+jose puntos: 0 | cpu3 puntos: 6 | cpu2 puntos: 9 | cpu1 puntos: 8 | cpu0 puntos: 11 | 
+cpu2 puntos: 6 | pablo puntos: 2 | cpu3 puntos: 3 | cpu1 puntos: 4 | cpu0 puntos: 3 | 
+
+
+cpu1 puntos: 6 | cpu2 puntos: 6 | cpu0 puntos: 11 | cpu3 puntos: 5 | 
+cpu3 puntos: 1 | cpu2 puntos: 0 | cpu0 puntos: 2 | cpu1 puntos: 1 | 
+cpu0 puntos: 2 | 

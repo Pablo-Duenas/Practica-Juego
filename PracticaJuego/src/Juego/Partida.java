@@ -77,7 +77,7 @@ public class Partida {
 	/**
      * Pide al usuario que le diga el número de jugadores humanos y maquinas que quiere, 
      */
-	static void numeroJugadores() {
+	static boolean numeroJugadores() {
 		Jugador jugador = new Jugador(null);
 		System.out.println("¿Numero de jugadores humanos? (1-4)");
 		int jugadorHumano = teclado.nextInt();
@@ -98,9 +98,11 @@ public class Partida {
 				jugador.ayadirJugador(new Jugador(maquina));
 				Jugador.comprobarJugador(maquina);
 			}
+			return true;
 		} else {
 			System.out.println("Número de jugadores inválidos");
 		}
+		return false;
 	}
     /**
      * Le dice al usuario que elija el tipo de partida que quiere jugar.

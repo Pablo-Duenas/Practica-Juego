@@ -28,10 +28,11 @@ public class ProgramaJuego {
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 1:
-				
-				Partida.numeroJugadores();
-				System.out.println("Empieza la partida");
-				Partida.tipoPartida();
+				if (Partida.numeroJugadores()) {
+					
+					System.out.println("Empieza la partida");
+					Partida.tipoPartida();
+				}
 				
 				
 				break;
