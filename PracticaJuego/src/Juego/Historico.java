@@ -70,10 +70,10 @@ public class Historico {
 			}
 		} catch (NoSuchFileException excepcion) {
 			System.err.println("Ese fichero no existe");
-		} catch (FileSystemException e) {
-			System.err.println("Excepcion de sistema de ficheros " + e);
-		} catch (IOException e) {
-			System.err.println("Excepcion generica al consultar el fichero " + e);
+		} catch (FileSystemException excepcion) {
+			System.err.println("Excepcion de sistema de ficheros " + excepcion);
+		} catch (IOException excepcion) {
+			System.err.println("Excepcion generica al consultar el fichero " + excepcion);
 		}
 	}
 	 public static void crearDirectorio(){
@@ -83,7 +83,7 @@ public class Historico {
 	        		try {
 					
 	        			Files.createDirectory(rutaCarpetaFicheros);
-	        		} catch (IOException e) {
+	        		} catch (IOException excepcion) {
 	        			System.err.println("Error al crear directorio: " + rutaCarpetaFicheros );
 				}
 	        }
