@@ -138,7 +138,10 @@ public class Jugador {
      */
 	public void mostrarJugadores() {
 		for (Jugador jugador : listaJugadores) {
-			System.out.println(jugador.getNombre());
+			 if (!jugador.getNombre().startsWith("cpu")){
+                 System.out.println(jugador.getNombre());
+             }
+
 		}
 	}
     /**

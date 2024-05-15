@@ -1,4 +1,4 @@
-package Juego;
+package Constantes;
 
 /**
  * La clase Constantes proporciona constantes para diferentes aspectos del juego.

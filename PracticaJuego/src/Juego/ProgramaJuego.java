@@ -21,6 +21,7 @@ public class ProgramaJuego {
 	ArrayList<Jugador> listahumanos = new ArrayList<Jugador>();
 	public static void main(String[] args) {
 		int opcion = 0;
+		System.out.println("***BIENVENIDO A ADIVINA CON PABLO***");
 		while (opcion != 5) {
 			System.out.println("1. Jugar Partida.");
 			System.out.println("2. Ranking De Jugadores.");
