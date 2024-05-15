@@ -76,6 +76,9 @@ public class Historico {
 			System.err.println("Excepcion generica al consultar el fichero " + excepcion);
 		}
 	}
+	/**
+     * Crea la carpeta donde se guardan los ficheros.
+     */
 	 public static void crearDirectorio(){
 
 	        Path rutaCarpetaFicheros = Paths.get("Ficheros");

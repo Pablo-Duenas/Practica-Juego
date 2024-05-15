@@ -17,6 +17,7 @@ public class Jugador {
 	 /**
      * Crea un nuevo jugador con un nombre y una puntuacion.
      * 
+     * @since 0.1
      * @param nombre El nombre del jugador.
      */
 	public Jugador(String nombre) {
@@ -26,6 +27,7 @@ public class Jugador {
 	/**
      * Añade un jugador a la lista de jugadores.
      * 
+     * @since 0.3
      * @param jugador El jugador que quieres añadir.
      * @return true si se añade correctamente, false si ya existe un jugador con el mismo nombre.
      */
@@ -46,6 +48,7 @@ public class Jugador {
 	/**
      * Añade el jugador maquina a la lista de jugadores.
      * 
+     * @since 0.3
      * @param jugador El jugador que quieres añadir.
      * @return true si se añade correctamente, false si ya existe un jugador con el mismo nombre.
      */
@@ -62,6 +65,7 @@ public class Jugador {
 	/**
      * Elimina un jugador de la lista de jugadores.
      * 
+     * @since 0.3
      * @param jugador El jugador que quieres eliminar.
      * @return true si se elimina correctamente, false si el jugador no se encuentra.
      */
@@ -77,6 +81,7 @@ public class Jugador {
 	 /**
      * Comprueba si existe un jugador con el nombre que le digan.
      * 
+     * @since 0.3
      * @param nombre El nombre del jugador que quieres buscar.
      */
 	public static boolean comprobarJugador(String nombre) {
@@ -96,7 +101,8 @@ public class Jugador {
 	/**
      * Comprueba si el nombre del jugador solo contiene letras.
      * 
-     * @return true si el nombre es válido, false si contiene números.
+     * @since 0.3
+     * @return true si el nombre es valido, false si contiene números.
      */
 	public boolean comprobarNombre() {
 		int contador = 0;
@@ -116,24 +122,28 @@ public class Jugador {
 	 /**
      * Devuelve la lista de jugadores.
      * 
+     * @since 0.3
      * @return La lista de jugadores.
      */
 	public static ArrayList<Jugador> listaJugadoresPartida() {
 		return listaJugadores;
 	}
     /**
-     * Incrementa la puntuación.
+     * @since 0.3
+     * Incrementa la puntuacion.
      */
 	public void sumarPuntos() {
 		puntuacion++;
 	}
 	/**
-     * Muestra la puntuación del jugador.
+	 * @since 0.3
+     * Muestra la puntuacion del jugador.
      */
 	public void mostrarPuntuacion() {
 		System.out.println(nombre + ": " + "puntos: " + puntuacion);
 	}
 	   /**
+	    * @since 0.3
      * Muestra los nombres de todos los jugadores.
      */
 	public void mostrarJugadores() {
@@ -145,6 +155,7 @@ public class Jugador {
 		}
 	}
     /**
+     * @since 0.3
      * Imprime la información del jugador.
      */
 	public void imprimirJugador() {

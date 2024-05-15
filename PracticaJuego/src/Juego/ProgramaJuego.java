@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * La clase ProgramaJuego permite al usuario seleccionar diferentes opciones
- * como jugar una partida, ver el ranking de jugadores, ver el histórico de
+ * como jugar una partida, ver el ranking de jugadores, ver el historico de
  * partidas y administrar la lista de jugadores.
  *
  * @version 1.0

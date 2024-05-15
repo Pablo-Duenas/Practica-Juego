@@ -4,3 +4,5 @@ cpu1 puntos: 0 | cpu2 puntos: 1 | cpu0 puntos: 1 | cpu3 puntos: 1 |
 cpu2 puntos: 2 | cpu0 puntos: 1 | cpu3 puntos: 1 | cpu1 puntos: 2 | 
 cpu3 puntos: 0 | cpu2 puntos: 1 | cpu0 puntos: 1 | cpu1 puntos: 1 | 
 cpu3 puntos: 1 | cpu0 puntos: 0 | cpu2 puntos: 1 | cpu1 puntos: 1 | 
+cpu0 puntos: 1 | cpu2 puntos: 1 | cpu3 puntos: 2 | cpu1 puntos: 0 | 
+cpu1 puntos: 1 | cpu0 puntos: 0 | cpu3 puntos: 3 | cpu2 puntos: 3 | 

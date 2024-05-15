@@ -22,6 +22,7 @@ public class Partida {
 	/**
 	 * Hace una pregunta al jugador Humano.
 	 * 
+	 * @since 0.5
 	 * @param jugador El jugador al que se le hace la pregunta de mates, letras e
 	 *                ingles.
 	 */
@@ -54,6 +55,7 @@ public class Partida {
 	/**
 	 * Hace una pregunta a un jugador máquina.
 	 * 
+	 * @since 0.5
 	 * @param maquina El jugador máquina al que se le hace la pregunta de mates,
 	 *                letras e ingles.
 	 */
@@ -84,7 +86,9 @@ public class Partida {
 
 	/**
 	 * Pide al usuario que le diga el número de jugadores humanos y maquinas que
-	 * quiere,
+	 * quiere.
+	 * @since 0.5
+	 * @return true si hay un numero de jugadores validos false si hay un numero de jugadores invalidos
 	 */
 	public static boolean numeroJugadores() {
 		Jugador jugador = new Jugador(null);
@@ -120,6 +124,7 @@ public class Partida {
 
 	/**
 	 * Le dice al usuario que elija el tipo de partida que quiere jugar.
+	 * @since 0.5
 	 */
 	public static void tipoPartida() {
 
@@ -153,6 +158,7 @@ public class Partida {
 
 	/**
 	 * Realiza una partida rápida.
+	 * @since 0.5
 	 */
 	public static void partidaRapida() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
@@ -181,6 +187,7 @@ public class Partida {
 
 	/**
 	 * Realiza una partida corta.
+	 * @since 0.5
 	 */
 	public static void partidaCorta() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
@@ -208,6 +215,7 @@ public class Partida {
 
 	/**
 	 * Realiza una partida normal.
+	 * @since 0.5
 	 */
 	public static void partidaNormal() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
@@ -235,6 +243,7 @@ public class Partida {
 
 	/**
 	 * Realiza una partida larga.
+	 * @since 0.5
 	 */
 	public static void partidaLarga() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
