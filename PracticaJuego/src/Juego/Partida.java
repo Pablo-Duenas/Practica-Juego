@@ -93,15 +93,15 @@ public class Partida {
 		int jugadorMaquina = teclado.nextInt();
 		int totalJugadores = jugadorHumano + jugadorMaquina;
 		if (totalJugadores <= Constantes.Jugadores_Maximos && (jugadorHumano > 0 || jugadorMaquina > 0)) {
-			for (int contador = 0; contador < jugadorHumano; contador++) {
-				System.out.println("Jugador humano " + (contador + 1) + ":");
-				String nombre = teclado.next();
-				if (Jugador.comprobarJugador(nombre) == false) {
-					return false;
+
+				for (int contador = 0; contador < jugadorHumano; contador++) {
+					System.out.println("Jugador humano " + (contador + 1) + ":");
+					String nombre = teclado.next();
+					if (Jugador.comprobarJugador(nombre) == false) {
+						return false;
+					}
+					
 				}
-
-			}
-
 			for (int contador = 0; contador < jugadorMaquina; contador++) {
 				String maquina = "cpu" + contador;
 				System.out.println(maquina);
@@ -172,6 +172,8 @@ public class Partida {
 		}
 		Historico.crearFicheroHistorico();
 		Historico.registrarPartida();
+		Ranking.crearFicheroRanking();
+		Ranking.registrarRanking();
 
 	}
 
@@ -198,6 +200,8 @@ public class Partida {
 		}
 		Historico.crearFicheroHistorico();
 		Historico.registrarPartida();
+		Ranking.crearFicheroRanking();
+		Ranking.registrarRanking();
 	}
 
 	/**
@@ -223,6 +227,8 @@ public class Partida {
 		}
 		Historico.crearFicheroHistorico();
 		Historico.registrarPartida();
+		Ranking.crearFicheroRanking();
+		Ranking.registrarRanking();
 	}
 
 	/**
@@ -248,6 +254,8 @@ public class Partida {
 		}
 		Historico.crearFicheroHistorico();
 		Historico.registrarPartida();
+		Ranking.crearFicheroRanking();
+		Ranking.registrarRanking();
 	}
 
 }

@@ -15,11 +15,11 @@ import java.util.Scanner;
  */
 public class ProgramaJuego {
 
+	static Scanner teclado = new Scanner(System.in);
+	Random aleatorio = new Random();
+	static Jugador jugador = new Jugador(null);
+	ArrayList<Jugador> listahumanos = new ArrayList<Jugador>();
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in);
-		Random aleatorio = new Random();
-		Jugador jugador = new Jugador(null);
-		ArrayList<Jugador> listahumanos = new ArrayList<Jugador>();
 		int opcion = 0;
 		while (opcion != 5) {
 			System.out.println("1. Jugar Partida.");
@@ -37,43 +37,13 @@ public class ProgramaJuego {
 				}
 				break;
 			case 2:
-				Ranking.crearFicheroRanking();
+				Ranking.mostarRanking();
 				break;
 			case 3:
 				Historico.mostrarFichero();
 				break;
 			case 4:
-				int opcionJugador = 0;
-				while (opcionJugador != 4) {
-					System.out.println("1. Ver Jugadores");
-					System.out.println("2. Añadir jugador");
-					System.out.println("3. Eliminar jugador");
-					System.out.println("4. Volver");
-					opcionJugador = teclado.nextInt();
-
-					switch (opcionJugador) {
-					case 1:
-						System.out.println("Lista de Jugadores");
-						jugador.mostrarJugadores();
-						break;
-					case 2:
-						System.out.println("Dime el nombre del jugador que quieres añadir");
-						String jugadorAyadido = teclado.next();
-						jugador.ayadirJugadorHumano(new Jugador(jugadorAyadido));
-						break;
-					case 3:
-						System.out.println("Dime el nombre del jugador que quieres eliminar");
-						String jugadorEliminado = teclado.next();
-						jugador.eliminarJugador(new Jugador(jugadorEliminado));
-						break;
-					case 4:
-						System.out.println("Llendo al menu principal...");
-						break;
-					default:
-						System.out.println("Esa no es una opción");
-						break;
-					}
-				}
+				subMenu();
 				break;
 			case 5:
 				System.out.println("Hasta la proxima...");
@@ -84,5 +54,42 @@ public class ProgramaJuego {
 			}
 		}
 	}
+	
+	
+	public static void subMenu() {
+		int opcionJugador = 0;
+		while (opcionJugador != 4) {
+			System.out.println("1. Ver Jugadores");
+			System.out.println("2. Añadir jugador");
+			System.out.println("3. Eliminar jugador");
+			System.out.println("4. Volver");
+			opcionJugador = teclado.nextInt();
+
+			switch (opcionJugador) {
+			case 1:
+				System.out.println("Lista de Jugadores");
+				jugador.mostrarJugadores();
+				break;
+			case 2:
+				System.out.println("Dime el nombre del jugador que quieres añadir");
+				String jugadorAyadido = teclado.next();
+				jugador.ayadirJugadorHumano(new Jugador(jugadorAyadido));
+				break;
+			case 3:
+				System.out.println("Dime el nombre del jugador que quieres eliminar");
+				String jugadorEliminado = teclado.next();
+				jugador.eliminarJugador(new Jugador(jugadorEliminado));
+				break;
+			case 4:
+				System.out.println("Llendo al menu principal...");
+				break;
+			default:
+				System.out.println("Esa no es una opción");
+				break;
+			}
+		}
+	}
+	
+	
 
 }
