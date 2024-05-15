@@ -24,8 +24,8 @@ public class Historico {
 	/**
      * Crea el archivo de historial si no existe.
      */
-	static void crearFicheroHistorico() {
-
+	public static void crearFicheroHistorico() {
+		crearDirectorio();
 		Path rutaFicheroHistorico = Paths.get(rutaFichero);
 
 		if (!Files.exists(rutaFicheroHistorico)) {
@@ -76,5 +76,17 @@ public class Historico {
 			System.err.println("Excepcion generica al consultar el fichero " + e);
 		}
 	}
+	 public static void crearDirectorio(){
+
+	        Path rutaCarpetaFicheros = Paths.get("Ficheros");
+	        	if (!Files.exists(rutaCarpetaFicheros)) {
+	        		try {
+					
+	        			Files.createDirectory(rutaCarpetaFicheros);
+	        		} catch (IOException e) {
+	        			System.err.println("Error al crear directorio: " + rutaCarpetaFicheros );
+				}
+	        }
+	    }
 
 }

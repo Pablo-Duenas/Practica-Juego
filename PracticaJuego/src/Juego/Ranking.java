@@ -16,7 +16,7 @@ public class Ranking {
 		jugadores = new ArrayList<>();
 	}
 
-	static void crearFicheroRanking() {
+	public static void crearFicheroRanking() {
 
 		Path rutaFichero1 = Paths.get(rutaFichero);
 

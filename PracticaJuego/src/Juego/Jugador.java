@@ -79,7 +79,7 @@ public class Jugador {
      * 
      * @param nombre El nombre del jugador que quieres buscar.
      */
-	public static void comprobarJugador(String nombre) {
+	public static boolean comprobarJugador(String nombre) {
 		boolean encontrado = false;
 		for (Jugador jugador : listaJugadores) {
 			if (jugador.getNombre().contains(nombre)) {
@@ -88,8 +88,9 @@ public class Jugador {
 			}
 		}
 		if (encontrado == false) {
-			System.out.println("No esta ese jugador: " + nombre);
+			System.out.println("El jugador: " +nombre + " no esta registrado");
 		}
+		return encontrado;
 
 	}
 	/**

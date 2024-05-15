@@ -52,13 +52,17 @@ public class PreguntaMates extends Preguntas {
      * @return true si el resultado es correcto, false si el resultado es incorrecto.
      */
 	public boolean comprobarResultado(int resultadoUsuario) {
-		if (resultado == resultadoUsuario) {
-			System.out.println("El resultado es correcto");
-			return true;
-		} else {
-			System.out.println("El resultado es incorrecto, el resultado correcto es: " + resultado);
-			return false;
-		}
+		
+			if (resultado == resultadoUsuario) {
+				System.out.println("El resultado es correcto");
+				return true;
+			} else {
+				System.out.println("El resultado es incorrecto, el resultado correcto es: " + resultado);
+				return false;
+			}
+			
+
+		
 
 	}
 

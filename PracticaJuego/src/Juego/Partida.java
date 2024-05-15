@@ -1,9 +1,10 @@
 package Juego;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
+
 /**
  * La clase Partida gestiona las partidas del juego.
  * 
@@ -15,12 +16,14 @@ public class Partida {
 	static Random aleatorio = new Random();
 	static Scanner teclado = new Scanner(System.in);
 	static ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+
 	/**
-     * Hace una pregunta al jugador Humano.
-     * 
-     * @param jugador El jugador al que se le hace la pregunta de mates, letras e ingles.
-     */
-	static void hacerPregunta(Jugador jugador) {
+	 * Hace una pregunta al jugador Humano.
+	 * 
+	 * @param jugador El jugador al que se le hace la pregunta de mates, letras e
+	 *                ingles.
+	 */
+	public static void hacerPregunta(Jugador jugador) {
 		int numeroPregunta = aleatorio.nextInt(3) + 1;
 		if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
 			PreguntaMates preguntaMates = new PreguntaMates();
@@ -45,11 +48,13 @@ public class Partida {
 			}
 		}
 	}
+
 	/**
-     * Hace una pregunta a un jugador máquina.
-     * 
-     * @param maquina El jugador máquina al que se le hace la pregunta de mates, letras e ingles.
-     */
+	 * Hace una pregunta a un jugador máquina.
+	 * 
+	 * @param maquina El jugador máquina al que se le hace la pregunta de mates,
+	 *                letras e ingles.
+	 */
 	public static void hacerPreguntaMaquina(Jugador maquina) {
 		int numeroPregunta = aleatorio.nextInt(3) + 1;
 		if (numeroPregunta == Constantes.PREGUNTAS_MATES) {
@@ -74,11 +79,14 @@ public class Partida {
 			}
 		}
 	}
+
 	/**
-     * Pide al usuario que le diga el número de jugadores humanos y maquinas que quiere, 
-     */
-	static boolean numeroJugadores() {
+	 * Pide al usuario que le diga el número de jugadores humanos y maquinas que
+	 * quiere,
+	 */
+	public static boolean numeroJugadores() {
 		Jugador jugador = new Jugador(null);
+		
 		System.out.println("¿Numero de jugadores humanos? (1-4)");
 		int jugadorHumano = teclado.nextInt();
 		System.out.println("¿Numero de jugadores CPU? (1-4)");
@@ -88,8 +96,10 @@ public class Partida {
 			for (int contador = 0; contador < jugadorHumano; contador++) {
 				System.out.println("Jugador humano " + (contador + 1) + ":");
 				String nombre = teclado.next();
-				Jugador.comprobarJugador(nombre);
-				;
+				if (Jugador.comprobarJugador(nombre) == false) {
+					return false;
+				}
+
 			}
 
 			for (int contador = 0; contador < jugadorMaquina; contador++) {
@@ -99,14 +109,16 @@ public class Partida {
 				Jugador.comprobarJugador(maquina);
 			}
 			return true;
+
 		} else {
 			System.out.println("Número de jugadores inválidos");
 		}
 		return false;
 	}
-    /**
-     * Le dice al usuario que elija el tipo de partida que quiere jugar.
-     */
+
+	/**
+	 * Le dice al usuario que elija el tipo de partida que quiere jugar.
+	 */
 	public static void tipoPartida() {
 
 		System.out.println("Elije el tipo de partida que quieres jugar: ");
@@ -136,9 +148,10 @@ public class Partida {
 		}
 
 	}
-    /**
-     * Realiza una partida rápida.
-     */
+
+	/**
+	 * Realiza una partida rápida.
+	 */
 	public static void partidaRapida() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -161,9 +174,10 @@ public class Partida {
 		Historico.registrarPartida();
 
 	}
-    /**
-     * Realiza una partida corta.
-     */
+
+	/**
+	 * Realiza una partida corta.
+	 */
 	public static void partidaCorta() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -185,9 +199,10 @@ public class Partida {
 		Historico.crearFicheroHistorico();
 		Historico.registrarPartida();
 	}
-    /**
-     * Realiza una partida normal.
-     */
+
+	/**
+	 * Realiza una partida normal.
+	 */
 	public static void partidaNormal() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);
@@ -209,9 +224,10 @@ public class Partida {
 		Historico.crearFicheroHistorico();
 		Historico.registrarPartida();
 	}
-    /**
-     * Realiza una partida larga.
-     */
+
+	/**
+	 * Realiza una partida larga.
+	 */
 	public static void partidaLarga() {
 		ArrayList<Jugador> jugadores = Jugador.listaJugadoresPartida();
 		Collections.shuffle(jugadores);

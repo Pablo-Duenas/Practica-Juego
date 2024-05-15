@@ -12,3 +12,17 @@ cpu2 puntos: 6 | pablo puntos: 2 | cpu3 puntos: 3 | cpu1 puntos: 4 | cpu0 puntos
 cpu1 puntos: 6 | cpu2 puntos: 6 | cpu0 puntos: 11 | cpu3 puntos: 5 | 
 cpu3 puntos: 1 | cpu2 puntos: 0 | cpu0 puntos: 2 | cpu1 puntos: 1 | 
 cpu0 puntos: 2 | 
+cpu1 puntos: 1 | cpu2 puntos: 2 | cpu0 puntos: 1 | cpu3 puntos: 0 | 
+
+cpu3 puntos: 0 | cpu1 puntos: 2 | cpu2 puntos: 0 | cpu0 puntos: 0 | 
+cpu2 puntos: 0 | cpu0 puntos: 0 | cpu3 puntos: 3 | cpu1 puntos: 0 | 
+cpu3 puntos: 5 | cpu0 puntos: 3 | cpu2 puntos: 0 | cpu1 puntos: 3 | 
+cpu2 puntos: 2 | cpu0 puntos: 3 | cpu1 puntos: 3 | 
+cpu1 puntos: 4 | cpu2 puntos: 4 | cpu0 puntos: 5 | 
+cpu2 puntos: 2 | cpu0 puntos: 0 | cpu1 puntos: 1 | 
+cpu1 puntos: 2 | cpu0 puntos: 3 | cpu2 puntos: 2 | pablo puntos: 0 | 
+cpu1 puntos: 1 | cpu2 puntos: 2 | cpu0 puntos: 1 | pablo puntos: 0 | 
+cpu3 puntos: 2 | cpu0 puntos: 0 | pablo puntos: 0 | cpu2 puntos: 1 | cpu1 puntos: 2 | 
+cpu1 puntos: 6 | cpu0 puntos: 7 | cpu3 puntos: 9 | cpu2 puntos: 7 | 
+cpu2 puntos: 2 | cpu1 puntos: 1 | cpu3 puntos: 0 | cpu0 puntos: 1 | 
+cpu2 puntos: 2 | cpu1 puntos: 1 | cpu0 puntos: 2 | cpu3 puntos: 1 | 

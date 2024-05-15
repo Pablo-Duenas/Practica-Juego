@@ -1,11 +1,13 @@
 package Juego;
 
 import java.util.ArrayList;
-import java.util.Random; 
+import java.util.Random;
 import java.util.Scanner;
+
 /**
- * La clase ProgramaJuego permite al usuario seleccionar diferentes opciones como jugar una partida, ver el ranking de jugadores,
- * ver el histórico de partidas y administrar la lista de jugadores.
+ * La clase ProgramaJuego permite al usuario seleccionar diferentes opciones
+ * como jugar una partida, ver el ranking de jugadores, ver el histórico de
+ * partidas y administrar la lista de jugadores.
  *
  * @version 1.0
  * @since 0.1
@@ -17,9 +19,9 @@ public class ProgramaJuego {
 		Scanner teclado = new Scanner(System.in);
 		Random aleatorio = new Random();
 		Jugador jugador = new Jugador(null);
-		ArrayList<Jugador> listahumanos = new ArrayList<Jugador>(); 
+		ArrayList<Jugador> listahumanos = new ArrayList<Jugador>();
 		int opcion = 0;
-		while(opcion != 5) {
+		while (opcion != 5) {
 			System.out.println("1. Jugar Partida.");
 			System.out.println("2. Ranking De Jugadores.");
 			System.out.println("3. Histórico De Partidas.");
@@ -29,12 +31,10 @@ public class ProgramaJuego {
 			switch (opcion) {
 			case 1:
 				if (Partida.numeroJugadores()) {
-					
+
 					System.out.println("Empieza la partida");
 					Partida.tipoPartida();
 				}
-				
-				
 				break;
 			case 2:
 				Ranking.crearFicheroRanking();
@@ -44,13 +44,13 @@ public class ProgramaJuego {
 				break;
 			case 4:
 				int opcionJugador = 0;
-				while(opcionJugador != 4) {
+				while (opcionJugador != 4) {
 					System.out.println("1. Ver Jugadores");
 					System.out.println("2. Añadir jugador");
 					System.out.println("3. Eliminar jugador");
 					System.out.println("4. Volver");
 					opcionJugador = teclado.nextInt();
-					
+
 					switch (opcionJugador) {
 					case 1:
 						System.out.println("Lista de Jugadores");
@@ -84,8 +84,5 @@ public class ProgramaJuego {
 			}
 		}
 	}
-	
-	
-	
 
 }
