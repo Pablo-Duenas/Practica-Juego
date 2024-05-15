@@ -13,16 +13,14 @@ import java.nio.file.Paths;
  */
 public class Log {
 	   /** La ruta del archivo del Log. */
-	private static String rutaFichero = "./Ficheros/Log.txt";
-	
-	
+	private static String rutaFichero = "./Ficheros/Historico.txt";
 	
     /**
      * Crea el archivo del Log si no existe.
      */
 	public static void crearFicheroLog() {
 		Path rutaFicheroLog = Paths.get(rutaFichero);
-
+		
 		if (!Files.exists(rutaFicheroLog)) {
 			System.out.println("No tienes el fichero te lo creo yo");
 			try {
